@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>.</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+        button {
+            padding: 50px 100px;
+            font-size: 48px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="play">🔴</button>
+
+    <script>
+        const audio = new Audio('sound.mp3');
+        audio.volume = 1.0;
+        
+        document.getElementById('play').onclick = () => {
+            audio.play().catch(e => {
+                alert('Ошибка: ' + e.message);
+            });
+        };
+    </script>
+</body>
+</html>
